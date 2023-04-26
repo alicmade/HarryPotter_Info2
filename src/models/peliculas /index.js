@@ -29,12 +29,28 @@ const dbProfesores = []
 function addProfesor(profesor) {
     dbProfesores.push(profesor)
 }
-function getProfesores() {
+/*function getProfesores() {
     return query('SELECT * FROM peliculas_tabla')
 }
 function getProfesor(id) {
     return query('SELECT * FROM peliculas_tabla WHERE id = ?', [id])
-}
+}*/
+pool.query('SELECT * FROM peliculas_tabla', function (error, results, fields) {
+
+    if (error) {
+        console.log(error);
+        return;
+    }
+    //console.log('Fields ', fields)
+    console.log('Resultados ', results)
+});
+
+
+//hacer funciones CRUD
+app.get('/peliculas', async (req, res) => {
+    const users = await runQuery('SELECT * FROM peliculas_tabla');
+    res.json(users);
+});
 
 module.exports = {
     get: {

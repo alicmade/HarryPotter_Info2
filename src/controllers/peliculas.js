@@ -64,9 +64,11 @@ function deletePeliculaById(req, res, next) {
 }
 
 module.exports = {
-    getPeliculas,
-    getPeliculaById,
-    addPelicula,
-    updatePeliculaById,
-    deletePeliculaById
+    get: {
+        all: getPeliculas,
+        byId: getPeliculaById
+    },
+    add: addPelicula,
+    update: updatePeliculaById,
+    delete: deletePeliculaById
 }
