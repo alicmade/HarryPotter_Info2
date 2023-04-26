@@ -1,0 +1,10 @@
+body{
+    background-image: url("https://images8.alphacoders.com/760/760721.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+h1{
+    color: white;
+}

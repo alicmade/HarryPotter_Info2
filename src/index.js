@@ -3,6 +3,8 @@ const mysql = require('mysql2');
 const express = require('express')
 const app = express()
 //ruta para router de peli y personajes
+const rutaPersonjes= require('./Personajes/index')
+
 app.get('/', (req, res) => {
     res.send('Bienvenido a mi API de Harry Potter');
 });

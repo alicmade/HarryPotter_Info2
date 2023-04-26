@@ -24,12 +24,12 @@ function query(sql, params) {
     } )
 }
 
-const dbProfesores = []
+/*const dbProfesores = []
 
 function addProfesor(profesor) {
     dbProfesores.push(profesor)
 }
-/*function getProfesores() {
+function getProfesores() {
     return query('SELECT * FROM peliculas_tabla')
 }
 function getProfesor(id) {
