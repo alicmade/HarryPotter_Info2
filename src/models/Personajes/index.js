@@ -1,11 +1,13 @@
-'use strict'
 
-const config = require('config').database
+
+//const config = require('config').database
 const mysql = require('mysql')
 
 const pool = mysql.createPool({
-    ...config,
-    connectionLimit: 10
+    host: 'localhost',
+    user: 'root',
+    password: 'alicia123',
+    database: 'harryPotter',
 })
 
 function query(sql, params) {
@@ -23,22 +25,22 @@ function query(sql, params) {
     } )
 }
 
-const dbProfesores = []
+const dbPersonajes = []
 
-function addProfesor(profesor) {
-    dbProfesores.push(profesor)
+function addPersonajes(personaje) {
+    dbPersonajes.push(personaje)
 }
-function getProfesores() {
-    return query('SELECT * FROM profesores')
+function getPersonajes() {
+    return query('SELECT * FROM personajes_tabla')
 }
-function getProfesor(id) {
-    return query('SELECT * FROM profesores WHERE id = ?', [id])
+function getPersonaje(id) {
+    return query('SELECT * FROM personajes_tabla WHERE id = ?', [id])
 }
 
 module.exports = {
     get: {
-        all: getProfesores,
-        byId: getProfesor
+        all: getPersonajes(),
+        byId: getPersonaje()
     },
-    add: addProfesor
+       add:addPersonajes()
 }

@@ -1,30 +1,53 @@
-'use strict';
-const mysql = require('mysql2');
-const express = require('express')
-const app = express()
-//ruta para router de peli y personajes
-const rutaPersonjes= require('./Personajes/index')
+'use strict'
 
-app.get('/', (req, res) => {
-    res.send('Bienvenido a mi API de Harry Potter');
+document.addEventListener('DOMContentLoaded', async function() {
+    await cargarPersonajes();
+    document.getElementById("boton-personajes").addEventListener("click", obtenerPersonajes);
 });
-// Configuración de la conexión a la base de datos
-const pool = mysql.createPool( {
-    host: 'localhost',
-    user: 'root',
-    password: 'Loritos11',
-    database: 'personajes',
-    connectionLimit: 10,
-});
+async function obtenerPersonajes() {
+    let id = parseInt(document.getElementById("id").value)
 
-// Conexión a la base de datos
-//const connection = await mysql.createConnection(pool);
+    fetch(
+        'https://localhost:3000/peliculas')
+        .then(response => {
+            // response es un objeto HTTP, podemos acceder a las
+            //  cabeceras y al contenido. Vamos a devolver el
+            //  contenido, que sabemos que es un objeto JSON
+            return response.json()
+        })
+        .then(info => {
+            extraerPeliculas(info)
+            // info es el objeto JSON recuperado
+            //  contenedor.textContent = JSON.stringify(info, null, ' ')
+        })
+        .catch(e => {
+            contenedor.textContent =
+                "Hubo un error recuperando la información de la película: " + e
+        })
+}
 
-// Método para ejecutar consultas SQL
-/*async function runQuery(sql, params) {
-    const [rows] = await connection.execute(sql, params);
-    return rows;
-}*/
 
-module.export= pool;
-app.listen(3000)
+function extraerPeliculas(objectoSW) {
+    //cambiar nombre de la variable elemento
+    let peliculas = objectoSW.results.map(elemento => {
+        return {
+            title: elemento.title,
+            url: elemento.url
+        }
+    })
+
+    let listaPeliculas = document.getElementById("listaPelicula-link")
+    peliculas.forEach(pelicula => {
+
+        let peliId = pelicula.url.match(/([0-9]*)\/?$/)[1]
+
+        let a = document.createElement("a")
+        a.innerText = pelicula.title
+        a.href = "pelicula.html?id=" + peliId
+
+        let li = document.createElement("li")
+        li.appendChild(a)
+        listaPeliculas.appendChild(li)
+    })
+
+}
