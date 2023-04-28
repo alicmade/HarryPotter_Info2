@@ -1,6 +1,6 @@
-const moduloPeliculas = require('/models/peliculas /indexPeliculas.js')
-/*
-function getPeliculas(req, res, next) {
+const moduloPeliculas = require('../../models/peliculas /index2.js')
+
+function getAllPeliculas(req, res, next) {
     moduloPeliculas.getAll()
         .then((peliculas) => {
             res.json(peliculas)
@@ -61,23 +61,13 @@ function deletePeliculaById(req, res, next) {
         .catch((error) => {
             next(error)
         })
-}*/
-
-module.exports = {
-    get: {
-        all: moduloPeliculas.getAll,
-        byId: moduloPeliculas.getById
-    },
-    add: moduloPeliculas.add,
-    update: moduloPeliculas.updateById,
-    delete: moduloPeliculas.deleteById
 }
 
-/*
+
 module.exports = {
-    getAll: getAllPeliculas(),
-    getById: getPeliculaById(),
-    add: addPelicula(),
-    updateById: updatePeliculaById(),
-    deleteById: deletePeliculaById()
-}*/
+    getAll: getAllPeliculas,
+    getById: getPeliculaById,
+    add: addPelicula,
+    updateById: updatePeliculaById,
+    deleteById: deletePeliculaById
+}

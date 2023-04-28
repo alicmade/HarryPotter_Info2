@@ -8,3 +8,12 @@ body{
 h1{
     color: white;
 }
+#resultados1{
+    color: white;
+}
+#cuadro-api{
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+}

@@ -4,21 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab1c813e-08eb-46a9-86d0-e59cc3814a5b" name="Changes" comment="segunda prueba 2.1">
-      <change afterPath="$PROJECT_DIR$/src/APIrest.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/default.json" afterDir="false" />
+    <list default="true" id="ab1c813e-08eb-46a9-86d0-e59cc3814a5b" name="Changes" comment="tercera prueba">
+      <change afterPath="$PROJECT_DIR$/src/Routers/peliculas/indexPeliculasRouter.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/config/local.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/peliculas/indexControllers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/personajes/indexControllersPersonajes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Routers/peliculas /indexPeliculasRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routers/indexPeliculasRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Routers/personajes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routers/personajes/indexPersonajesRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/peliculas.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/APIrest.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/APIrest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Routers/indexPeliculasRouter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Routers/personajes/indexPersonajesRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routers/personajes/indexPersonajesRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/peliculas/indexControllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/peliculas/indexControllers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/personajes/indexControllersPersonajes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/personajes/indexControllersPersonajes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/Personajes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Personajes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/peliculas /index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/peliculas /indexPeliculas.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/peliculas /index2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/peliculas /index2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/peliculas /indexPeliculas.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,11 +77,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Routers/peliculas" />
       <recent name="$PROJECT_DIR$/src/controllers/personajes" />
       <recent name="$PROJECT_DIR$/src/controllers" />
       <recent name="$PROJECT_DIR$/src/models/peliculas " />
       <recent name="$PROJECT_DIR$/src/models" />
-      <recent name="$PROJECT_DIR$/src/Routers" />
     </key>
   </component>
   <component name="RunManager">
@@ -108,7 +108,7 @@
       <workItem from="1682591905487" duration="430000" />
       <workItem from="1682592344876" duration="1128000" />
       <workItem from="1682594080745" duration="1726000" />
-      <workItem from="1682596891492" duration="10430000" />
+      <workItem from="1682596891492" duration="22229000" />
     </task>
     <task id="LOCAL-00001" summary="prueba inicial">
       <created>1682505639838</created>
@@ -131,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682520538578</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="tercera prueba">
+      <created>1682612539049</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1682612539049</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,7 +160,8 @@
     <MESSAGE value="prueba inicial" />
     <MESSAGE value="segunda prueba" />
     <MESSAGE value="segunda prueba 2.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="segunda prueba 2.1" />
+    <MESSAGE value="tercera prueba" />
+    <option name="LAST_COMMIT_MESSAGE" value="tercera prueba" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

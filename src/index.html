@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>paguina principal</title>
     <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
 </head>
 <body>
 
@@ -12,5 +13,15 @@
             <input type="text" id="name" name="name" required />
             <button id="boton-personajes">Personajes</button>
         </div>
+  </div>
+  <div id="cuadro-busqueda">
+      <input id="input-busqueda" type="search" name="id" placeholder="Ingrese el ID del personaje" autofocus required>
+      <button id="buscar-btn" type="button">Buscar</button>
+  </div>
+  <div id="cuadro-api">
+      <p>RESULTADOS:</p>
+      <div id="resultados"></div>
+  </div>
+
 </body>
 </html>

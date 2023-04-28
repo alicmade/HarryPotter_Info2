@@ -1,5 +1,5 @@
 'use strict'
-
+/*
 document.addEventListener('DOMContentLoaded', async function() {
     await cargarPersonajes();
     document.getElementById("boton-personajes").addEventListener("click", obtenerPersonajes);
@@ -50,4 +50,43 @@ function extraerPeliculas(objectoSW) {
         listaPeliculas.appendChild(li)
     })
 
+}*/
+// controllers/peliculasController.js
+
+async function buscarPersonaje() {
+    let id = parseInt(document.getElementById('input-busqueda').value);
+    if (isNaN(id)) {
+        alert('Debe ingresar un número válido');
+        return;
+    }
+
+    try {
+        let res = await fetch('http://localhost:3000/personajes/' + id);
+        let personaje = await res.json();
+        console.log(personaje);
+
+        let resultadosDOM = document.getElementById('resultados');
+        resultadosDOM.innerHTML = '';
+
+        let div = document.createElement('div');
+        let pNombre = document.createElement('p');
+        pNombre.innerText = `Nombre: ${personaje.name}`;
+        let pDesc = document.createElement('p');
+        pDesc.innerText = `Descripción: ${personaje.description}`;
+        let pId = document.createElement('p');
+        pId.innerText = `Id personaje: ${personaje.id}`;
+
+        div.appendChild(pNombre);
+        div.appendChild(pDesc);
+        div.appendChild(pId);
+        resultadosDOM.appendChild(div);
+    } catch (error) {
+        console.error(error);
+        alert('Error al buscar el personaje. Por favor, inténtelo de nuevo más tarde.');
+    }
 }
+
+document.addEventListener('DOMContentLoaded', async function () {
+    document.getElementById('buscar-btn').addEventListener('click', buscarPersonaje);
+});
+

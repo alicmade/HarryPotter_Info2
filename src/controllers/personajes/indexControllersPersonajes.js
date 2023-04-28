@@ -1,5 +1,5 @@
 const moduloPersonaje = require('../../models/Personajes/index')
-/*
+
 function getPersonajes(req, res, next) {
     moduloPersonaje.getAll()
         .then((personaje) => {
@@ -71,7 +71,8 @@ module.exports = {
     add: addPersonaje,
     update: updatePersonajeById,
     delete: deletePersonajeById
-}*/
+}
+/*
 module.exports = {
     get: {
         all: moduloPersonaje.get.all,
@@ -80,4 +81,4 @@ module.exports = {
     add: moduloPersonaje.add,
     update: moduloPersonaje.update,
     delete: moduloPersonaje.delete
-}
+}*/
