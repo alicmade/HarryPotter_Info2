@@ -1,58 +1,5 @@
 'use strict'
-/*
-document.addEventListener('DOMContentLoaded', async function() {
-    await cargarPersonajes();
-    document.getElementById("boton-personajes").addEventListener("click", obtenerPersonajes);
-});
-async function obtenerPersonajes() {
-    let id = parseInt(document.getElementById("id").value)
-
-    fetch(
-        'https://localhost:3000/peliculas')
-        .then(response => {
-            // response es un objeto HTTP, podemos acceder a las
-            //  cabeceras y al contenido. Vamos a devolver el
-            //  contenido, que sabemos que es un objeto JSON
-            return response.json()
-        })
-        .then(info => {
-            extraerPeliculas(info)
-            // info es el objeto JSON recuperado
-            //  contenedor.textContent = JSON.stringify(info, null, ' ')
-        })
-        .catch(e => {
-            contenedor.textContent =
-                "Hubo un error recuperando la información de la película: " + e
-        })
-}
-
-
-function extraerPeliculas(objectoSW) {
-    //cambiar nombre de la variable elemento
-    let peliculas = objectoSW.results.map(elemento => {
-        return {
-            title: elemento.title,
-            url: elemento.url
-        }
-    })
-
-    let listaPeliculas = document.getElementById("listaPelicula-link")
-    peliculas.forEach(pelicula => {
-
-        let peliId = pelicula.url.match(/([0-9]*)\/?$/)[1]
-
-        let a = document.createElement("a")
-        a.innerText = pelicula.title
-        a.href = "pelicula.html?id=" + peliId
-
-        let li = document.createElement("li")
-        li.appendChild(a)
-        listaPeliculas.appendChild(li)
-    })
-
-}*/
-// controllers/peliculasController.js
-
+ç/*
 async function buscarPersonaje() {
     let id = parseInt(document.getElementById('input-busqueda').value);
     if (isNaN(id)) {
@@ -88,5 +35,74 @@ async function buscarPersonaje() {
 
 document.addEventListener('DOMContentLoaded', async function () {
     document.getElementById('buscar-btn').addEventListener('click', buscarPersonaje);
-});
 
+})*/
+/*window.addEventListener('click',  obtenerDatosSWAPI);
+let id = parseInt(document.getElementById('input-busqueda').value);
+if (isNaN(id)) {
+    alert('Debe ingresar un número válido');
+}
+function obtenerDatosSWAPI(){
+    try {
+        fetch('http://localhost:3000/personajes/ ' + id)
+            .then(response => {
+                return response.json()
+            })
+            .then(data => {
+                console.log(data)
+
+            })
+    }catch (error) {
+        console.error(error);
+        alert('Error al buscar el personaje. Por favor, inténtelo de nuevo más tarde.');
+    }
+}*/
+
+function buscarPersonaje2() {
+    const nombrePersonaje = parseInt(document.getElementById("nombrePersonaje").value); // Obtener el nombre del personaje a buscar desde un input en el HTML
+    const url = `http://localhost:3000/personajes/` + nombrePersonaje; // URL de la API con el parámetro de búsqueda
+
+    fetch(url)
+        .then((response) => response.json()) // Analizar la respuesta HTTP como JSON
+        .then((data) => {
+            // Aquí se puede trabajar con los datos obtenidos del servidor
+            console.log(data); // Imprimir los datos en la consola para verificar que se hayan recibido correctamente
+        })
+        .catch((error) => {
+            console.error(error); // Manejar cualquier error que se haya producido durante la petición
+        });
+}
+
+function buscarPersonaje() {
+    const id = parseInt(document.getElementById("input-busqueda").value);
+    console.log("ID del personaje:", id);
+    try {
+        fetch(`http://localhost:3000/personajes/${id}`)
+            .then(response => response.json())
+            .then(data => {
+                console.log("Datos recibidos:", data);
+                const resultados = document.getElementById("resultados");
+                resultados.innerHTML = ""; // Limpiar el contenido anterior antes de agregar nuevos resultados
+
+                // Iterar sobre los resultados y crear un elemento de lista para cada uno
+                data.forEach(personaje => {
+                    const a = document.createElement("a");
+                    a.innerText = personaje.name;
+                    let li = document.createElement("li")
+                    li.appendChild(a)
+                    resultados.appendChild(li)
+                });
+
+            })
+    } catch (error) {
+        console.error(error);
+        alert('Error al buscar el personaje. Por favor, inténtelo de nuevo más tarde.');
+    }
+}
+
+const botonBuscar = document.getElementById("buscar-btn");
+botonBuscar.addEventListener("click", buscarPersonaje);
+
+//function extraerPersonajes(data){
+
+//}

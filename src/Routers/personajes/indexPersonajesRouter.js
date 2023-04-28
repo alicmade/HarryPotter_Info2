@@ -6,25 +6,26 @@ router.get('/personajes', async(req, res, next) => {
     (await controladorPersonajes.get.all)()
         .then(personajes => res.send(personajes))
         .catch(err => res.send('ERROR'))
+
 })
-router.get('/:idPersonajes', async(req, res, next) => {
-    (await controladorPersonajes.get.byId)(req.params.idPersonajes)
+router.get('/personajes/:id', async(req, res, next) => {
+    (await controladorPersonajes.get.byId)(req.params.id)
         .then(personajes => res.send(personajes))
         .catch(err => res.send('ERROR'))
 
 })
 
-router.post('/', (req, res, next) => {
+router.post('/personajes', (req, res, next) => {
     controladorPersonajes.add(req.body)
     res.send('Personaje almacenado')
 })
 
-router.delete('/:idPersonajes', (req, res, next) => {
+router.delete('/personajes/:id', (req, res, next) => {
     controladorPersonajes.delete(req.params.id)
     res.send('Personaje eliminado')
 })
 
-router.put('/:idPersonajes', (req, res, next) => {
+router.put('/personajes/:id', (req, res, next) => {
     controladorPersonajes.update(req.params.id, req.body)
     res.send('Personaje actualizado')
 })
